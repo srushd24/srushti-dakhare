@@ -146,38 +146,75 @@
   .filter-body{max-width:880px;margin:0 auto;padding:2rem}
   .filter-section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin:2rem 0 1rem}
 
+
+   /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;z-index:150}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-nav-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:140}
+  .mobile-nav-drawer.open{display:block}
+  .mobile-nav-inner{position:absolute;top:0;left:0;width:72%;max-width:280px;height:100%;background:var(--bg);padding:2rem 1.5rem;overflow-y:auto;box-shadow:4px 0 24px rgba(0,0,0,.12)}
+  .mobile-nav-inner .nav-logo{font-weight:700;font-size:15px;color:var(--accent);display:block;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+  .mobile-nav-inner ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+  .mobile-nav-inner ul a{display:block;font-size:15px;color:var(--text2);padding:.6rem .75rem;border-radius:var(--radius-sm);transition:all .2s}
+  .mobile-nav-inner ul a:hover{background:var(--accent-light);color:var(--accent)}
+
   @media(max-width:680px){
     .tab-panel.active{flex-direction:column}
-    nav{width:100%;min-height:auto;position:relative;top:0;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:1rem 0}
-    .nav-logo{padding:.5rem 1rem;border-bottom:none;margin-bottom:.5rem}
-    .nav-links{flex-direction:row;flex-wrap:wrap;padding:.25rem .75rem}
+    nav{display:none}
+    .hamburger{display:flex}
     main{margin-left:0}
     .about-grid,.contact-grid{grid-template-columns:1fr}
     .container{padding:0 1.25rem}
     section{padding:3rem 0}
-    .tab-btn{padding:.65rem 1rem;font-size:13px}
-
+    .tab-btn{padding:.65rem 1rem;font-size:12px;letter-spacing:.08em}
+   
    /* HERO MOBILE */
-#hero{min-height:100svh;align-items:flex-start}
-#hero .container{padding-top:3rem;padding-bottom:3rem}
-#hero h1{font-size:clamp(1.8rem,8vw,2.6rem) !important;letter-spacing:-.01em !important}
-#hero p{font-size:15px !important}
-.scroll-nudge{margin-top:2rem}
-#hero [style*="display:flex;align-items:center;gap:1.25rem"]{gap:.75rem;margin-bottom:1.5rem}
-#hero [style*="width:64px;height:64px"]{width:48px !important;height:48px !important;font-size:16px !important}
-#hero [style*="display:flex;gap:1rem;flex-wrap:wrap"]{gap:.75rem}
-#hero [style*="padding:12px 28px"]{padding:10px 20px !important;font-size:13px !important}
-#hero [style*="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem"]{margin-bottom:1.5rem !important}
+    #hero{min-height:100svh;align-items:flex-start}
+    #hero .container{padding-top:3rem;padding-bottom:3rem}
+    #hero h1{font-size:clamp(1.8rem,8vw,2.6rem) !important;letter-spacing:-.01em !important}
+    #hero p{font-size:15px !important}
+    .scroll-nudge{margin-top:2rem}
+    #hero [style*="display:flex;align-items:center;gap:1.25rem"]{gap:.75rem;margin-bottom:1.5rem}
+    #hero [style*="width:64px;height:64px"]{width:48px !important;height:48px !important;font-size:16px !important}
+    #hero [style*="display:flex;gap:1rem;flex-wrap:wrap"]{gap:.75rem}
+    #hero [style*="padding:12px 28px"]{padding:10px 20px !important;font-size:13px !important}
+    #hero [style*="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem"]{margin-bottom:1.5rem !important}
   }
 </style>
 </head>
 <body>
 
 <!-- TOP TAB BAR -->
-<div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('career')">Career</button>
-  <button class="tab-btn" onclick="switchTab('break')">Break</button>
-  <button class="tab-btn" onclick="switchTab('outside')">Outside work</button>
+<div class="tab-bar" style="justify-content:space-between;align-items:center">
+  <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div style="display:flex;gap:.5rem">
+    <button class="tab-btn active" onclick="switchTab('career')">Career</button>
+    <button class="tab-btn" onclick="switchTab('break')">Break</button>
+    <button class="tab-btn" onclick="switchTab('outside')">Outside work</button>
+  </div>
+  <div style="width:38px"></div>
+</div>
+
+ <!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-drawer" id="navDrawer" onclick="closeDrawer()">
+  <div class="mobile-nav-inner" onclick="event.stopPropagation()">
+    <span class="nav-logo">Srushti Dakhare</span>
+    <ul id="drawerLinks">
+      <li><a href="#about" onclick="closeDrawer()">About</a></li>
+      <li><a href="#employers" onclick="closeDrawer()">Experience</a></li>
+      <li><a href="#metrics" onclick="closeDrawer()">Impact</a></li>
+      <li><a href="#skills" onclick="closeDrawer()">Skills</a></li>
+      <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
+      <li><a href="#case-studies" onclick="closeDrawer()">Case studies</a></li>
+      <li><a href="#achievements" onclick="closeDrawer()">Achievements</a></li>
+      <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+    </ul>
+  </div>
 </div>
 
 <!-- ===================== CAREER TAB ===================== -->
@@ -661,6 +698,12 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-panel').forEach(p => {
     p.classList.toggle('active', p.id === 'tab-' + tab);
   });
+  // update drawer links
+  const ul = document.getElementById('drawerLinks');
+  ul.innerHTML = drawerLinkMap[tab].map(href =>
+    `<li><a href="${href}" onclick="closeDrawer()">${drawerLabelMap[href]}</a></li>`
+  ).join('');
+  closeDrawer();
   window.scrollTo(0,0);
 }
 
