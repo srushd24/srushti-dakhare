@@ -194,8 +194,8 @@
   </button>
   <div style="display:flex;gap:.5rem">
     <button class="tab-btn active" onclick="switchTab('career')">Career</button>
-    <button class="tab-btn" onclick="switchTab('break')">Break</button>
     <button class="tab-btn" onclick="switchTab('outside')">Outside work</button>
+    <button class="tab-btn" onclick="switchTab('resume')">Resume</button>
   </div>
   <div style="width:38px"></div>
 </div>
@@ -570,36 +570,6 @@
   </main>
 </div>
 
-<!-- ===================== BREAK TAB ===================== -->
-<div class="tab-panel" id="tab-break">
-  <nav>
-    <div class="nav-logo">Srushti Dakhare</div>
-    <ul class="nav-links">
-      <li><a href="#break-intro">Overview</a></li>
-      <li><a href="#break-activities">Activities</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="break-intro" style="padding:7rem 0 3rem;background:linear-gradient(135deg,#fff 60%,var(--accent-light) 100%)">
-      <div class="container">
-        <div class="section-tag">Career break</div>
-        <h2 class="section-title">What I'm doing <span>now</span></h2>
-        <p style="color:var(--text2);font-size:16px;max-width:600px;line-height:1.8">I'm on an intentional pause — recently married and cherishing this time to settle in, be present, read deeply, and do things I never had time for.</p>
-      </div>
-    </section>
-    <section id="break-activities">
-      <div class="container">
-        <div class="break-grid">
-          <div class="break-card"><div class="break-icon">💍</div><h3>Newlywed & family time</h3><p>Recently got married and cherishing this time to settle in, be present with family, and build a new chapter.</p></div>
-          <div class="break-card"><div class="break-icon">🎨</div><h3>Craft & making</h3><p>Finally making time for craft projects I'd been putting off — a slower, more creative pace I've been looking forward to.</p></div>
-          <div class="break-card"><div class="break-icon">📚</div><h3>Reading deeply</h3><p>Working through books on strategy, systems thinking, and product craft — and keeping a close eye on AI advancements.</p></div>
-          <div class="break-card"><div class="break-icon">✍️</div><h3>Writing</h3><p>Reflecting on product lessons and publishing essays on what I've learned building at scale.</p></div>
-          <div class="break-card"><div class="break-icon">🔭</div><h3>Exploring domains</h3><p>Looking into where I want to build next — consumer, AI, or something new entirely.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
 
 <!-- ===================== OUTSIDE WORK TAB ===================== -->
 <div class="tab-panel" id="tab-outside">
@@ -674,10 +644,45 @@
       </div>
     </section>
 
+   <section id="break-outside">
+  <div class="container">
+    <div class="section-tag">Career break</div>
+    <h2 class="section-title">What I'm doing <span>now</span></h2>
+    <p style="color:var(--text2);font-size:15px;max-width:600px;line-height:1.8;margin-bottom:1.5rem">I'm on an intentional pause — recently married and cherishing this time to settle in, be present, read deeply, and do things I never had time for.</p>
+    <div class="break-grid">
+      <div class="break-card"><div class="break-icon">💍</div><h3>Newlywed & family time</h3><p>Recently got married and cherishing this time to settle in, be present with family, and build a new chapter.</p></div>
+      <div class="break-card"><div class="break-icon">🎨</div><h3>Craft & making</h3><p>Finally making time for craft projects I'd been putting off — a slower, more creative pace I've been looking forward to.</p></div>
+      <div class="break-card"><div class="break-icon">📚</div><h3>Reading deeply</h3><p>Working through books on strategy, systems thinking, and product craft — and keeping a close eye on AI advancements.</p></div>
+      <div class="break-card"><div class="break-icon">✍️</div><h3>Writing</h3><p>Reflecting on product lessons and publishing essays on what I've learned building at scale.</p></div>
+      <div class="break-card"><div class="break-icon">🔭</div><h3>Exploring domains</h3><p>Looking into where I want to build next — consumer, AI, or something new entirely.</p></div>
+    </div>
+  </div>
+</section>
   </main>
 </div>
 
-<!-- SKILL FILTER OVERLAY -->
+<!-- ===================== RESUME TAB ===================== -->
+<div class="tab-panel" id="tab-resume">
+  <nav>
+    <div class="nav-logo">Srushti Dakhare</div>
+    <ul class="nav-links">
+      <li><a href="#resume-view">Resume</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="resume-view">
+      <div class="container">
+        <div class="section-tag">Resume</div>
+        <h2 class="section-title">My <span>resume</span></h2>
+        <p style="color:var(--text2);margin-bottom:2rem">assets/Srushti_Dakhare_B2C_5YOE.pdf</p>
+        <div style="width:100%;height:80vh;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center">
+          <p style="color:var(--text3);font-size:14px">Resume will appear here once you share the file URL</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+ <!-- SKILL FILTER OVERLAY -->
 <div id="skill-filter-view">
   <div class="filter-header">
     <button class="filter-close" onclick="closeFilter()">← Back</button>
@@ -692,7 +697,7 @@
 <script>
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach((b,i) => {
-    const tabs = ['career','break','outside'];
+    const tabs = ['career','outside','resume'];
     b.classList.toggle('active', tabs[i] === tab);
   });
   document.querySelectorAll('.tab-panel').forEach(p => {
