@@ -631,18 +631,80 @@
     </section>
 
 
+    
     <section id="hobbies">
       <div class="container">
         <div class="section-tag">Hobbies</div>
         <h2 class="section-title">Beyond <span>work</span></h2>
-        <div class="hobbies-grid">
-          <div class="hobby-card"><div class="hobby-img" style="background:#ede9ff">🎨</div><div class="hobby-body"><h3>Painting</h3><p>My way of slowing down. There's something deeply therapeutic about putting brush to canvas — it resets me in a way nothing else does.</p></div></div>
-          <div class="hobby-card"><div class="hobby-img" style="background:#e1f5ee">🍳</div><div class="hobby-body"><h3>Cooking</h3><p>I love experimenting with flavours and the art of slow cooking. The reward of a meal you made yourself — that's another kind of therapy.</p></div></div>
-          <div class="hobby-card"><div class="hobby-img" style="background:#faeeda">🎲</div><div class="hobby-body"><h3>Board & video games</h3><p>Sharpens my strategy and collaboration instincts. Also a great way to expel energy and just be competitive for fun.</p></div></div>
-          <div class="hobby-card"><div class="hobby-img" style="background:#faece7">🌍</div><div class="hobby-body"><h3>Travelling</h3><p>Gives me perspectives on different people, their lives, and behaviours — helping me build a sense of both domestic and global personas.</p></div></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:12px">
+
+          <!-- TILE 1: Maldives — large, spans 2 cols -->
+          <div style="grid-column:1/3;grid-row:1/2;border-radius:var(--radius);overflow:hidden;position:relative;height:280px">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/IMG_3105.png" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Travel</div>
+              <div style="font-size:17px;font-weight:700;color:#fff">Honeymoon in Maldives</div>
+            </div>
+          </div>
+
+          <!-- TILE 2: Kashmir — tall, spans 2 rows -->
+          <div style="grid-column:3/4;grid-row:1/3;border-radius:var(--radius);overflow:hidden;position:relative;">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/04DE8B57-8B7E-4D82-9E37-4A251658BCC2.JPG" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem;right:1rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Travel</div>
+              <div style="font-size:15px;font-weight:700;color:#fff;line-height:1.3">Kashmir 2025 — Gulmarg</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:4px">2 days post Pahalgam attack</div>
+            </div>
+          </div>
+
+          <!-- TILE 3: Painting -->
+          <div style="grid-column:1/2;grid-row:2/3;border-radius:var(--radius);overflow:hidden;position:relative;height:200px">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/IMG_5744.png" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Painting</div>
+              <div style="font-size:14px;font-weight:700;color:#fff">Completed canvas</div>
+            </div>
+          </div>
+
+          <!-- TILE 4: Niagara -->
+          <div style="grid-column:2/3;grid-row:2/3;border-radius:var(--radius);overflow:hidden;position:relative;height:200px">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/IMG_4711.JPG" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Travel</div>
+              <div style="font-size:14px;font-weight:700;color:#fff">Niagara — 4th July</div>
+            </div>
+          </div>
+
+          <!-- TILE 5: NYC solo — spans 2 cols -->
+          <div style="grid-column:1/3;grid-row:3/4;border-radius:var(--radius);overflow:hidden;position:relative;height:220px">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/IMG_0100.JPG" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Solo travel</div>
+              <div style="font-size:17px;font-weight:700;color:#fff">Solo trip to New York</div>
+            </div>
+          </div>
+
+          <!-- TILE 6: Maharashtrian meal -->
+          <div style="grid-column:3/4;grid-row:3/4;border-radius:var(--radius);overflow:hidden;position:relative;height:220px">
+            <img src="https://raw.githubusercontent.com/srushd24/srushti-dakhare/main/assets/46A4043A-2ED1-4174-AEA2-A876F46F3953.jpg" style="width:100%;height:100%;object-fit:cover"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)"></div>
+            <div style="position:absolute;bottom:1rem;left:1.25rem;right:.5rem">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px">Cooking</div>
+              <div style="font-size:14px;font-weight:700;color:#fff">Maharashtrian full meal</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+  </main>
+</div>
 
    <section id="break-outside">
   <div class="container">
